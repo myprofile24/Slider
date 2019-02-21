@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+body{
+	background-image: url("https://st.depositphotos.com/3075729/4305/i/950/depositphotos_43050079-stock-photo-lace-on-old-wood-background.jpg" );
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#container{
+	display: flex;
+	align-content: center;
+	border: 1px solid grey;
+	position: absolute; 
+    z-index: -1; 
+    margin: 50px 75px;
+    height:85%;
+    width: 80%;
+    overflow: hidden;
+   justify-content: space-between;
+
+}
+#mainImage{
+	transition: ease 2s;
+
+}
+button{
+	margin-top: 40%;
+	background-color: #cebda9;
+	height:50px;
+	width:30px;
+	border-radius: 5px;
+}
+button :hover {
+	color: #c2f442;
+}
+.arrowLeft {
+    float: left;
+}
+
+.arrowRight {
+    float: right;
+
+}
+
+h2{
+	margin-left: 200px;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 30px;
+	color:#343d16;
+}
+</style>
+<body>
+	<div id=frame>
+	<h2> Dress your doughter pretty</h2>
+</div>
+<div id ="container">
+
+	<button onclick = "previousSlide()" class="arrowLeft">&#8249; </button>
+	<img src="https://img.ppwebstatic.com/origin/product/000271000017/5baf140b595f4.jpg/950x950"  alt="First Slide" id="mainImage">
+	<button onclick = "nextSlide()" class="arrowRight">&#8250;</button>
+</div>
+<script type="text/javascript">
+	let pictures = ["https://img.ppwebstatic.com/origin/product/000271000017/5baf140b595f4.jpg/950x950", "https://img.ppwebstatic.com/product/59e36d9ee8b57/1508076958.jpg/950x950", "https://img.ppwebstatic.com/product/000103000820/5b743712b8003.JPG/950x950", "https://img.ppwebstatic.com/Product/42672/C-YT-001-00032-007.jpg/1495098326.jpg/950x950", "https://img.ppwebstatic.com/origin/product/000398000423/5bd6d003cc9f3.jpg/950x950"]
+
+
+	let container = document.getElementById("container");
+	let pictureIndex = 1;
+	function previousSlide(){
+		pictures.forEach(function(){
+     container = mainImage.setAttribute('src', pictures[pictureIndex]);
+ })
+		pictureIndex--;
+		if(pictureIndex < 0) {pictureIndex = 4;}
+	}
+function nextSlide(){
+		pictures.forEach(function(){
+     container = mainImage.setAttribute('src', pictures[pictureIndex]);
+ })
+		pictureIndex++;
+		if(pictureIndex > 4) {pictureIndex = 0;}
+	}
+ 
+	
+</script>
+</div>
+
+</body>
+</html>
